@@ -7,7 +7,7 @@ const CampaignList = () => {
     useEffect(() => {
         const fetchCampaigns = async () => {
             try {
-                const response = await axios.get('http://localhost:5000/api/campaign/list');
+                const response = await axios.get('https://walletadapter-backend.vercel.app/api/campaign/list');
                 setCampaigns(response.data);
             } catch (error) {
                 console.error('Error fetching campaigns:', error);
@@ -19,7 +19,7 @@ const CampaignList = () => {
 
     const stopCampaign = async (id) => {
         try {
-            await axios.put(`http://localhost:5000/api/campaign/stop/${id}`);
+            await axios.put(`https://walletadapter-backend.vercel.app/api/campaign/list/${id}`);
             // Update the UI by removing or updating the stopped campaign
             setCampaigns((prevCampaigns) =>
                 prevCampaigns.map((campaign) =>
@@ -46,21 +46,21 @@ const CampaignList = () => {
                             <p className={`text-gray-500 ${campaign.status === 'stopped' ? 'text-red-500' : ''}`}>
                                 Status: {campaign.status || 'active'}
                             </p>
-                            {campaign.status !== 'stopped' && (
-                                <button
+                            {campaign.status !== 'stopped' && (x
+                                < button
                                     onClick={() => stopCampaign(campaign._id)}
-                                    className="mt-2 px-4 py-2 bg-red-600 text-white rounded hover:bg-red-700"
+                            className="mt-2 px-4 py-2 bg-red-600 text-white rounded hover:bg-red-700"
                                 >
-                                    Stop Campaign
-                                </button>
-                            )}
-                        </div>
-                    ))
-                ) : (
-                    <p>No campaigns found.</p>
-                )}
+                            Stop Campaign
+                        </button>
+                    )}
             </div>
+            ))
+            ) : (
+            <p>No campaigns found.</p>
+                )}
         </div>
+        </div >
     );
 };
 
