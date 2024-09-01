@@ -46,20 +46,20 @@ const CampaignList = () => {
                             <p className={`text-gray-500 ${campaign.status === 'stopped' ? 'text-red-500' : ''}`}>
                                 Status: {campaign.status || 'active'}
                             </p>
-                            {campaign.status !== 'stopped' && (x
-                                < button
+                            {campaign.status !== 'stopped' && (
+                                <button
                                     onClick={() => stopCampaign(campaign._id)}
-                            className="mt-2 px-4 py-2 bg-red-600 text-white rounded hover:bg-red-700"
+                                    className="mt-2 px-4 py-2 bg-red-600 text-white rounded hover:bg-red-700"
                                 >
-                            Stop Campaign
-                        </button>
-                    )}
-            </div>
-            ))
-            ) : (
-            <p>No campaigns found.</p>
+                                    Stop Campaign
+                                </button>
+                            )}
+                        </div>
+                    ))
+                ) : (
+                    <p>No campaigns found.</p>
                 )}
-        </div>
+            </div>
         </div >
     );
 };
