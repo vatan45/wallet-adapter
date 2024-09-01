@@ -10,6 +10,9 @@ import { Airdrop } from './Airdrop';
 import Navbar from './Navbar';
 import { SignMessage } from './SignMessage';
 import { SendSolana } from './SendSolana'; // Import the SendSolana component
+import CreateCampaign from './CreateCampaign';
+import CampaignList from './CampaignList';
+import Realairdrop from './realairdrop';
 
 function App() {
   return (
@@ -19,6 +22,7 @@ function App() {
           <div className="min-h-screen bg-gradient-to-br from-purple-400 via-violet-400 to-yellow-200-500">
             <Navbar />
             <div className="container mx-auto px-4 py-8">
+
               {/* Main "Welcome to Air Self" box */}
               <div className="bg-white bg-opacity-10 backdrop-filter backdrop-blur-lg rounded-lg shadow-lg p-8 mb-8">
                 <h2 className="text-7xl font-bold text-violet-200 mb-8 text-center">WELCOME TO AIR SELF</h2>
@@ -44,6 +48,19 @@ function App() {
                 <div className="bg-white bg-opacity-10 backdrop-filter backdrop-blur-lg rounded-lg shadow-lg p-6 w-full md:w-1/2">
                   <h3 className="text-3xl font-bold text-violet-200 mb-4 text-center">Send Solana</h3>
                   <SendSolana />
+                </div>
+              </div>
+
+              {/* Campaigns Section */}
+              <div className="mt-8">
+                <div className="bg-white bg-opacity-10 backdrop-filter backdrop-blur-lg rounded-lg shadow-lg p-8 mb-8">
+                  <h2 className="text-3xl font-bold text-violet-200 mb-6 text-center">Create Campaign</h2>
+                  <CreateCampaign />
+                </div>
+
+                <div className="bg-white bg-opacity-10 backdrop-filter backdrop-blur-lg rounded-lg shadow-lg p-8">
+                  <h2 className="text-3xl font-bold text-violet-200 mb-6 text-center">Available Campaigns</h2>
+                  <CampaignList />
                 </div>
               </div>
             </div>
