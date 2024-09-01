@@ -8,7 +8,7 @@ const CampaignList = () => {
     useEffect(() => {
         const fetchCampaigns = async () => {
             try {
-                const response = await axios.get('https://walletadapter-backend.vercel.app/api/campaign/list');
+                const response = await axios.get('https://walletadapter-backend.vercel.app/route/campaign/list');
                 setCampaigns(response.data);
             } catch (error) {
                 console.error('Error fetching campaigns:', error);
@@ -20,7 +20,7 @@ const CampaignList = () => {
 
     const stopCampaign = async (id) => {
         try {
-            await axios.put(`https://walletadapter-backend.vercel.app/api/campaign/list/${id}`);
+            await axios.put(`https://walletadapter-backend.vercel.app/route/campaign/list/${id}`);
             // Update the UI by removing or updating the stopped campaign
             setCampaigns((prevCampaigns) =>
                 prevCampaigns.map((campaign) =>

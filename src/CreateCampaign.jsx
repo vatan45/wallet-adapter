@@ -12,7 +12,7 @@ function CreateCampaign() {
         const creator = "Your wallet address"; // Get from wallet adapter
 
         try {
-            const response = await axios.post('https://walletadapter-backend.vercel.app/api/campaign/create', {
+            const response = await axios.post('https://walletadapter-backend.vercel.app/route/campaign/create', {
                 name,
                 description,
                 criteria,
